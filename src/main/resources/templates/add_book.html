@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+
+    <div class="container">
+            <div class="banner-heading">
+                Add new book
+            </div>
+            <div class="banner-sub-heading">
+
+                <form class="form-group" th:action="@{/books/new}" th:object="${book}" method="post">
+                    <input type="text" class="form-control" th:field="*{book_id}"><br /> <br />
+                    <input type="text" class="form-control" th:field="*{naslov}"><br /> <br />
+                    <input type="text" class="form-control" th:field="*{na_lager}"><br /> <br />
+                    <select th:field="*{category}" class="form-control">
+
+                        <option th:each="c:${cats}"
+                                th:value="${c}"
+                                th:utext="${c.ime}">
+                        </option>
+
+
+                    </select> <br />
+
+                    <button  type="submit" class="btn btn-success text-dark btn-banner" style="width: 220px">Add</button>
+                    <input  type="button" class="btn btn-warning text-dark btn-banner" value="Back" style="width: 220px">
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

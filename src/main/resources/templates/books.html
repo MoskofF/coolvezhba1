@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>List of all books</h2>
+    <p>Those are all books that we have :)</p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book:${books}">
+            <td th:text="${book.naslov}">Title</td>
+            <td th:text="${book.na_lager}">Quantity</td>
+            <td th:text="${book.category}">Category</td>
+            <td th:text="${book.slika}">Image</td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-primary text-dark btn-banner" style="width: 220px" th:href="@{/books/new}" >Add book</a>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
