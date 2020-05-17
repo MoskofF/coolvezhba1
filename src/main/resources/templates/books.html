@@ -18,6 +18,8 @@
             <th>Quantity</th>
             <th>Category</th>
             <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -25,7 +27,7 @@
             <td th:text="${book.naslov}">Title</td>
             <td th:text="${book.na_lager}">Quantity</td>
             <td th:text="${book.category}">Category</td>
-            <td th:text="${book.slika}">Image</td>
+            <td><img src="${book.slika}"></td>
         </tr>
         </tbody>
     </table>

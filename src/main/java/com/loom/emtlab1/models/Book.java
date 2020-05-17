@@ -9,7 +9,7 @@ public class Book {
     private String naslov;
     private int na_lager;
     private String category;
-    private MultipartFile slika;
+    private String slika;
 
 
     public long getBook_id() {
@@ -44,11 +44,11 @@ public class Book {
         this.category = category;
     }
 
-    public MultipartFile getSlika() {
+    public String getSlika() {
         return slika;
     }
 
-    public void setSlika(MultipartFile slika) {
+    public void setSlika(String slika) {
         this.slika = slika;
     }
 }

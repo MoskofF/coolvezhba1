@@ -57,4 +57,11 @@ public class BookControler extends BaseController{
 
         return this.redirect("./");
     }
+
+    @PostMapping("/delete_book")
+    public ModelAndView deleteBook(@ModelAttribute Book book) {
+        bookService.deleteBookById(book.getBook_id());
+
+        return this.view("/books");
+    }
 }
